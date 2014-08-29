@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="demo">
-<head>
 
+<head>
+  <link rel="stylesheet" type="text/css" href="/bower_components/ng-grid/ng-grid.min.css" />
+  <style>
+    .gridStyle {
+      border: 1px solid rgb(212, 212, 212);
+      width: 600px;
+      height: 400px
+    }
+  </style>
 </head>
+
 <body ng-controller="LightsController">
   <h1>Lights</h1>
-  <pre>
-    {{ data | json }}
-  </pre>
+  <div class="gridStyle" ng-grid="gridOptions">
+
+
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/angularjs/angular.min.js"></script>
+  <!-- <script src="/bower_components/angular-ui-utils/ui-utils.min.js"></script> -->
+  <script src="/bower_components/ng-grid/build/ng-grid.min.js"></script>
   <script src="demo.js"></script>
 </body>
+
 </html>

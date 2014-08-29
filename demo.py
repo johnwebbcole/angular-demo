@@ -17,7 +17,7 @@ class IndexHandler(web.RequestHandler):
 
 class LightsHandler(web.RequestHandler):
   def get(self):
-    lights = db.lights.find()
+    lights = db.lights.find({}, {"name":1, "lcp": 1, "lon": 1, "lat": 1, "sys": 1})
     self.set_header("Content-Type", "application/json")
     self.write(json.dumps(list(lights),default=json_util.default))
 

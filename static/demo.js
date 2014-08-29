@@ -1,4 +1,4 @@
-var app = angular.module('demo', []);
+var app = angular.module('demo', ['ngGrid']);
 
 app.service('LightsService', ['$http',
   function ($http) {
@@ -18,11 +18,19 @@ app.controller('LightsController', ['$scope', 'LightsService',
       name: 'LightsController'
     };
 
+    $scope.gridOptions = {
+      data: 'data',
+      showGroupPanel: true
+    };
+
     LightsService.get().
     success(function (data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
       $scope.data = data;
+      $scope.gridOptions = {
+        data: 'data'
+      };
     }).
     error(function (data, status, headers, config) {
       // called asynchronously if an error occurs
