@@ -3,11 +3,14 @@
 <head>
 
 </head>
-<body>
-
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/angularjs/angular.min.js.gzip"></script>
+<body ng-controller="LightsController">
+  <h1>Lights</h1>
+  <pre>
+    {{ data | json }}
+  </pre>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/angularjs/angular.min.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>

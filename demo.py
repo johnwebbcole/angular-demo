@@ -24,7 +24,6 @@ class LightsHandler(web.RequestHandler):
 settings = {
   "template_path": os.path.join(os.path.dirname(__file__), "templates"),
   "static_path": os.path.join(os.path.dirname(__file__), "static"),
-  "bower_components": os.path.join(os.path.dirname(__file__), "bower_components"),
   "debug": True
 }
 
@@ -32,6 +31,7 @@ application = web.Application([
   (r'/', IndexHandler),
   (r'/index', IndexHandler),
   (r'/api/v1/lights',LightsHandler),
+  (r'/bower_components/(.*)', web.StaticFileHandler, {"path": os.path.join(os.path.dirname(__file__), "bower_components")})
 ],**settings)
 
 if __name__ == "__main__":
